@@ -1,5 +1,6 @@
 use rusty_liveblog::*;
 use std::thread;
+use std::time::Duration;
 use simple_error::SimpleError;
 
 fn run() -> Result<()> {
@@ -13,8 +14,10 @@ fn run() -> Result<()> {
 }
 
 fn main() {
+    thread::sleep(Duration::from_millis(500));
     play_pause();
     let run = run();
+    thread::sleep(Duration::from_millis(500));
     play_pause();
 
     if let Err(err) = run {
