@@ -1,0 +1,15 @@
+[package]
+name = "rusty-liveblog"
+version = "0.1.0"
+authors = ["leo60228 <iakornfeld@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+pulldown-cmark = "0.5.2"
+autopilot = "0.2.0"
+simple-error = "0.2.0"
+notify-rust = "3.6.0"
+x11 = "2.18.1"
+image = "0.21.2"
