@@ -7,14 +7,22 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-pulldown-cmark = "0.5.2"
-autopilot = "0.2.0"
-simple-error = "0.2.0"
-notify-rust = "3.6.0"
-x11 = "2.18.1"
-image = "0.21.2"
-finally-block = "0.1.1"
-serde = "1.0.92"
-serde_json = "1.0.39"
-reqwest = "0.9.18"
-typed-builder = "0.3.0"
+pulldown-cmark = "0.7.1"
+autopilot = "0.4.0"
+simple-error = "0.2.1"
+notify-rust = "3.6.3"
+x11 = "2.18.2"
+image = "0.22.0"
+finally-block = "0.2.0"
+serde = "1.0.110"
+serde_json = "1.0.53"
+tumblr-api = { git = "https://github.com/leo60228/tumblr-api.git" }
+anyhow = "1.0.31"
+oauth-1a = "0.1.1"
+maplit = "1.0.2"
+mime = "0.4.0-a.0"
+toml = "0.5.6"
+
+[patch.crates-io]
+url = { git = "https://github.com/servo/rust-url.git" }
+mime = { git = "https://github.com/hyperium/mime.git" }

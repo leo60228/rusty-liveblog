@@ -1,7 +1,8 @@
+use anyhow::Result;
+use finally_block::finally;
 use rusty_liveblog::*;
 use std::thread;
 use std::time::Duration;
-use finally_block::finally;
 
 fn run() -> Result<()> {
     thread::sleep(Duration::from_millis(500));
@@ -14,14 +15,9 @@ fn run() -> Result<()> {
 
     let screenshot = screenshot()?;
     let caption = multiline_dialog("Caption")?;
+    let mut tumblr = authenticate()?;
 
-    let image = upload(&get_token()?, screenshot)?;
-
-    let login = authenticate("leo60228", &get_password()?)?;
-    let new_post = NewPost::builder()
-        .body(format!("![Screenshot]({})\n\n{}", image.url, caption))
-        .build();
-    post(&login.access_token, &new_post)?;
+    upload(&mut tumblr, screenshot, Some(caption))?;
 
     info("Posted!")?;
 
